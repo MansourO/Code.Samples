@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Code.Samples.Helpers.Runners;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Code.Samples
 {
-    public class BinaryTree
+    public class BinaryTree: IRunner
     {
         public TreeNode _root { get; set; }
         public TreeNode Search(int value)
@@ -136,6 +137,18 @@ namespace Code.Samples
                 if (node.Right != null)
                     Console.WriteLine("R:{node.Right.Value}");
             }
+        }
+
+        public void Run()
+        {
+            Console.WriteLine("BinaryTree Run");
+
+            for (int i = 1; i <= 10; i++)
+            {
+                this.Insert(i);
+            }
+
+            this.PreOrderTraversal();
         }
     }
 
