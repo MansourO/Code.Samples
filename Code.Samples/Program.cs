@@ -9,7 +9,9 @@ List<IRunner> runners = new List<IRunner>()
     //new DSArray(),
     //new DSHashTable(2),
     //new DSSinglyLinkedList(10),
-    new DSDoublyLinkedList(11)
+    //new DSDoublyLinkedList(11)
+    //new DSBinarySearchTree()
+    new DSGraph()
 };
 
 
