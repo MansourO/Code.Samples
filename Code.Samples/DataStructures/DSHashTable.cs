@@ -10,12 +10,12 @@ namespace Code.Samples.DataStructures.Samples
     public class DSHashTable : IRunner
     {
         private int length;
-        private Nodes[] data;
+        private HashNodes[] data;
 
         public DSHashTable(int size)
         {
             this.length = size;
-            this.data = new Nodes[size];
+            this.data = new HashNodes[size];
         }
 
         private int hash(string key)
@@ -34,9 +34,9 @@ namespace Code.Samples.DataStructures.Samples
             int index = hash(key);
             if(this.data[index] == null)
             {
-                this.data[index] = new Nodes();
+                this.data[index] = new HashNodes();
             }
-            this.data[index].Add(new Node(key, value));
+            this.data[index].Add(new HashNode(key, value));
         }
 
         public int get(string key)
@@ -91,12 +91,12 @@ namespace Code.Samples.DataStructures.Samples
         }
     }
 
-    public class Nodes : List<Node> { }
-    public class Node
+    public class HashNodes : List<HashNode> { }
+    public class HashNode
     {
         public string Key { get; set; }
         public int Value { get; set; }
-        public Node(string key, int value)
+        public HashNode(string key, int value)
         {
             this.Key = key;
             this.Value = value;
